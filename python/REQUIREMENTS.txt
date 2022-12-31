@@ -1,0 +1,65 @@
+argparse
+subprocess
+from bs4 import BeautifulSoup
+import urllib.request, urllib.parse, urllib.error
+from urllib.parse import urlparse 
+import ssl
+import validators
+import sys
+import re
+exif import Image
+import os 
+
+https://
+http://
+
+# list of names
+names = ['Jessa', 'Eric', 'Bob']
+
+# open file in write mode
+with open(r'E:/demos/files_demos/account/sales.txt', 'w') as fp:
+    for item in names:
+        # write each item on a new line
+        fp.write("%s\n" % item)
+    print('Done')
+
+You can do it in two ways, choose what suits your requirement:
+
+Method I.) Replacing using line number. You can use built-in function enumerate() in this case:
+
+First, in read mode get all data in a variable
+
+with open("your_file.txt",'r') as f:
+    get_all=f.readlines()
+Second, write to the file (where enumerate comes to action)
+
+with open("your_file.txt",'w') as f:
+    for i,line in enumerate(get_all,1):         ## STARTS THE NUMBERING FROM 1 (by default it begins with 0)    
+        if i == 2:                              ## OVERWRITES line:2
+            f.writelines("Mage\n")
+        else:
+            f.writelines(line)
+Method II.) Using the keyword you want to replace:
+
+Open file in read mode and copy the contents to a list
+
+with open("output.txt","a") as fp:
+    newline=[]
+    for word in f.readlines():        
+        newline.append(word.replace("Warrior","Mage"))  ## Replace the keyword while you copy.  
+"Warrior" has been replaced by "Mage", so write the updated data to the file:
+
+with open("some_file.txt","w") as f:
+    for line in newline:
+        f.writelines(line)
+This is what the output will be in both cases:
+
+Dan                   Dan           
+Warrior   ------>     Mage       
+500                   500           
+1                     1   
+0                     0           
+
+
+
+https://www.en.wikipedia.com/wiki/ArXiv_(identifier)
